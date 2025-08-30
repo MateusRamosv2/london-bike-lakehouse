@@ -7,8 +7,8 @@
 
 import pandas as pd
 
-caminho_bronze = "/Volumes/Workspace/default/arquivos-projetos/london_merged.csv"
-df = pd.read_csv(caminho_bronze)
+caminho_bronze = "../bronze/london_bike_bronze.parquet"
+df = pd.read_parquet(caminho_bronze)
 
 
 df["timestamp"] = pd.to_datetime(df["timestamp"])
