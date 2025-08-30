@@ -18,8 +18,7 @@ df_bronze = pd.read_csv(caminho_arquivo)
 print("Dados crus - camada Bronze")
 display(df_bronze.head())
 
-# 5. (Opcional) salvar em formato parquet para futuras camadas
-# df_bronze.to_parquet("/Volumes/workspace/default/bronze/london_bike_bronze.parquet", index=False)
-
+#salvar em formato parquet para futuras camadas
+df_bronze.to_parquet("../bronze/london_bike_bronze.parquet", index=False)
 
 
