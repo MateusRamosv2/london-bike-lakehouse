@@ -34,8 +34,8 @@ df = df.rename(columns={
 
 print(df.head())
 
-display(df)
+# display(df)
 
 # 6. (Opcional) salvar dataset tratado
-# df.to_parquet("/Volumes/workspace/default/silver/london_bike_silver.parquet", index=False)
-
+# Salva a versão tratada em Silver
+df.to_parquet("../silver/london_bike_silver.parquet", index=False)
