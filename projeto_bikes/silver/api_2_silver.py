@@ -32,7 +32,7 @@ df = df.rename(columns={
     "season" : "estacao"
  })
 
-print(df.head())
+# print(df.head())
 
 # display(df)
 

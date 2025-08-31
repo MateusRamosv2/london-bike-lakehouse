@@ -39,13 +39,14 @@ df_agg_hora = df.groupby("hora")["qtd_bikes"].mean().reset_index()
 # display(df_agg_weekday)
 # display(df_agg_hora)
 
-df_corr = df[["qtd_bikes", "temp_real", "temp_percebida", "umidade", "velocidade_vento"]]
+# df_corr = df[["qtd_bikes", "temp_real", "temp_percebida", "umidade", "velocidade_vento"]]
+
+df_corr = df[["qtd_bikes", "temp_real", "temp_percebida", "umidade", "velocidade_vento"]].corr()
+
 
 # caminho_gold = "../gold/london_bike_gold.parquet"
 
-df.to_parquet("../gold/london_bike_gold.parquet", index=False)
-
-# # Salva tanto as agregações quanto o dataset principal com colunas legíveis
+# Salva tanto as agregações quanto o dataset principal com colunas legíveis
 # df.to_parquet(caminho_gold + "london_bike_gold_base.parquet", index=False)
 # df_agg_mes.to_parquet(caminho_gold + "london_bike_gold_mes.parquet", index=False)
 # df_agg_weekday.to_parquet(caminho_gold + "london_bike_gold_weekday.parquet", index=False)
@@ -55,4 +56,6 @@ df.to_parquet("../gold/london_bike_gold.parquet", index=False)
 print("\n Dataset Gold processado e salvo com sucesso!")
 
 display(df)
+
+# df.to_parquet("../gold/london_bike_gold.parquet", index=False)
 
